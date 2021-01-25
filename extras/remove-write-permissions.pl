@@ -10,12 +10,6 @@ use diagnostics;
 # finds files with write permissions, and then removes
 # said write permissions.
 
-# IMPORTANT: I found some literature on the topic at https://perlmaven.com/recursive-subroutines
-# and they recommend using a module called Path::Iterator::Rule
-
-# Also found this module that looks to solve most
-# of this problem: https://metacpan.org/pod/distribution/PerlPowerTools/bin/chmod
-
 my $path = shift || '.';
 
 traverse($path);
@@ -36,6 +30,7 @@ sub traverse {
             chmod 0555, $file;
             say "File $file has been changed to read and execute for all users";
         }
+        traverse($file)
 
     }
     close $dh;
