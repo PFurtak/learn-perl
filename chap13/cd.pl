@@ -21,9 +21,9 @@ use Cwd;
 # chomp(my $dir = <STDIN>);
 
 # if ($dir =~ /\A\s*\z/) {
-#     chdir or die "Cannot chdir to your home directory. $!";
+#     chdir or die "Cannot chdir to your home directory. $!\n";
 # } else {
-#     chdir $dir or die "Cannot chdir to $dir. $!";
+#     chdir $dir or die "Cannot chdir to $dir. $!\n";
 # }
 
 # say "current directory is: ", getcwd();
@@ -41,9 +41,9 @@ say "What directory would you like to navigate to?";
 chomp(my $dir = <STDIN>);
 
 if ($dir =~ /\A\s*\z/) {
-    chdir or die "Cannot chdir to your home directory. $!";
+    chdir or die "Cannot chdir to your home directory. $!\n";
 } else {
-    chdir $dir or die "Cannot chdir to $dir. $!";
+    chdir $dir or die "Cannot chdir to $dir. $!\n";
 }
 
 say "current directory is: ", getcwd();
