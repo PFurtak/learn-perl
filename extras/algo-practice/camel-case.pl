@@ -17,17 +17,14 @@ use warnings;
     my $s4 = 'tampabayWonTheSuperBowl';
 
 sub count_words {
-    my $string = shift;
-    my $count = 1;
+    foreach my $string (@_) {
+       my $count = 1;
 
-    while ($string =~ m/\p{Uppercase}/g) {
+       while ($string =~ m/\p{Uppercase}/g) {
         $count++;
-    }
-
+      }
     say "$string : $count";
+  }
 }
 
-count_words($s);
-count_words($s2);
-count_words($s3);
-count_words($s4);
+count_words($s, $s2, $s3, $s4);
