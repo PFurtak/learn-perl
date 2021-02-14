@@ -8,7 +8,7 @@ use diagnostics;
 
 my $result;
 
-say "Please provide a word to check of it is an anagram.";
+say "Please provide a word to check if it is an anagram.";
 chomp(my $word = lc <STDIN>);
 $word =~ s/\s*//g;
 
